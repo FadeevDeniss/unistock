@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k!awc52w$bkb9tj($myyoo5%p=i59n0)8xyrsp(nn08l^a44iv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['unistock.online', 'www.unistock.online']
 
