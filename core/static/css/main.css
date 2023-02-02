@@ -35,11 +35,6 @@
     font-size: 60px;
 }
 
-.auth {
-    display: flex;
-    justify-content: center;
-}
-
 /* || Modal window style */
 
 .authForm {
@@ -80,6 +75,15 @@
     color: #fff;
 }
 
+/* || Form invalid */
+
+.invalid {
+    color: #e90505;
+}
+
+.hidden {
+    display: none;
+}
 
 /* Effects || Navbar */
 
@@ -93,33 +97,50 @@
 
 @media (min-width: 320px) and (max-width: 575px) {
 
+    .middle {
+        height: 45vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
     .middle h1 {
-        font-size: 15px;
+        font-size: 22px;
     }
 
     .modalHeader {
-        font-size: 1.3em;
+        font-size: 1.2em;
         font-weight: bold;
     }
 
     button[name="primary"] {
-        font-size: 10px;
+        font-size: 15px;
     }
 
 }
 
-@media (max-width: 993px) {
+@media (min-width: 414px) and (max-width: 575px) {
 
-    .middle h1 {
-        font-size: 50px;
-    }
-
+    .middle {
+        height: 45vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 
-@media (max-width: 756px) {
-
     .middle h1 {
-        font-size: 40px;
+        font-size: 30px;
+    }
+
+    .modalHeader {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    button[name="primary"] {
+        font-size: 20px;
     }
 
 }

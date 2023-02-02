@@ -26,6 +26,7 @@
   {% endblock stylesheets %}
 
     <title>Unistock</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
 
 </head>
 
@@ -33,28 +34,32 @@
 
 
   <section class="header">
-    <div class="container">
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="#">
                     <img src="/media/navbar_icon.png" alt="Unistock" width="70" height="64">
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
-                        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
 
                     <span class="navbar-toggler-icon"></span>
 
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarContent">
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link select" aria-current="page" href="templates">Главная</a>
+
+                            <a class="nav-link select" aria-current="page" href="."> Главная </a>
+
                         </li>
 
                     </ul>
@@ -62,35 +67,53 @@
                 </div>
 
             </div>
+
         </nav>
 
         <div class="middle">
 
-            <h1 class="text-white fw-bold display-3">К сожалению, все магазины <span class="theme-text">UNISTOCK</span> в России закрылись. Сейчас проходят закрытые распродажи для владельцев клубных карт. Чтобы найти ближайший магазин, пожалуйста, авторизуйтесь. </h1>
+            <h1 class="text-white fw-bold display-2">К сожалению, все магазины <span class="theme-text">UNISTOCK</span> в России закрылись. Сейчас проходят закрытые распродажи для владельцев клубных карт. </h1>
 
         </div>
       
-        <div class="auth">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <small class="text-center text-white">Чтобы найти ближайший магазин, пожалуйста, авторизуйтесь.</small>
             <button type="button" name="primary" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#userAuth">Авторизоваться</button>
         </div>
+
+  <!--  Modal window content  -->
 
         <div id="userAuth" class="modal fade">
 
             <div class="modal-dialog modal-dialog-centered">
+
                 <div class="modal-content">
+
                     <div class="modal-body">
+
                         <button type="button" class="btn-close btn-close-white"
-                        data-bs-dismiss="modal"></button>
+                                data-bs-dismiss="modal">
+                        </button>
+
                         <div class="authForm bg-dark">
+
                             <h1 class="modalHeader text-center">Авторизация</h1>
-                            <form action="templates">
-                                <div class="mb-3 mt-3">
+
+                            <form id="formMod">
+                                {% csrf_token %}
+
+                                <div class="mb-3 mt-3 has-validation">
+
                                     <label for="tel">Номер телефона</label>
-                                    <input type="tel" class="form-control" />
+                                    <input type="tel" name="phone" class="form-control" pattern="(\+?\d[- .]*){7,13}" required/>
+                                    <div class="invalid hidden">Номер не зарегистрирован</div>
+
                                 </div>
+
                                 <div class="d-grid gap-2">
-                                    <button type="button" class="btn btn-light mt-3">OK</button>
+                                    <button type="button" class="btn btn-outline-light mt-3">OK</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -98,6 +121,8 @@
             </div>
 
         </div>
+
+  <!-- End of modal content -->
 
     </div>
 
@@ -112,7 +137,7 @@
           crossorigin="anonymous"></script>
 
   <!-- DEV -->
-  <script src="main.js"></script>
+  <script src="/static/js/main.js"></script>
 
   <!-- PROD -->
 
