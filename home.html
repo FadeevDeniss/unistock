@@ -16,7 +16,7 @@
   <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Custom JS -->
-  <script src="/static/core/js/main.js"></script>
+  <script src="/apps/core/static/core/js/main.js"></script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,12 +25,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
-  {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{% static 'core/css/main.css' %}">
-  {% endblock stylesheets %}
+    <link rel="stylesheet" type="text/css" href='/apps/core/static/core/css/main.css'>
 
     <title>Unistock</title>
-    <link rel="shortcut icon" type="image/png" href="{% static 'core/media/favicon.ico' %}" >
+    <link rel="shortcut icon" type="image/png" href='apps/core/static/core/media/favicon.ico'>
 
 </head>
 
@@ -46,7 +44,7 @@
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="#">
-                    <img src="/media/navbar_icon.png" alt="Unistock" width="70" height="64">
+                    <img src="/apps/core/static/core/media/navbar_icon.png" alt="Unistock" width="70" height="64">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -74,12 +72,14 @@
 
         </nav>
 
+        <!-- Navbar ends here -->
+
         <div class="middle">
 
             <h1 class="text-white fw-bold display-2">К сожалению, все магазины <span class="theme-text">UNISTOCK</span> в России закрылись. Сейчас проходят закрытые распродажи для владельцев клубных карт. </h1>
 
         </div>
-      
+
         <div class="d-grid gap-2 col-6 mx-auto">
             <small class="text-center text-white">Чтобы найти ближайший магазин, пожалуйста, авторизуйтесь.</small>
             <button type="button" name="primary" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#userAuth">Авторизоваться</button>
@@ -145,8 +145,6 @@
     </div>
 
   </section>
-
-  <!-- Navbar ends here -->
 
   <!--  Separate Popper and Bootstrap JS -->
 
