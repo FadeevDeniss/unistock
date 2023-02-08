@@ -1,18 +1,43 @@
-const mod = document.getElementById('userAuth');
+window.addEventListener('load', (e) => {
+    const input = document.getElementById('user_phone');
 
-mod.addEventListener('show.bs.modal', event => {
-    const btn = mod.querySelector('.authForm button'),
-          form = document.forms[0];
+    input.addEventListener('focusin', () => {
+        if (input.value.length === 0) input.value = '+7';
+    })
 
-    btn.onclick = () => {
-        form.reset();
-        mod.querySelector('.invalid').classList.remove('hidden');
-        form.phone.onclick = () => {
-            mod.querySelector('.invalid').classList.add('hidden');
+    input.addEventListener('focusout', () => {
+        if (input.value.length < 3) {
+            input.value = '';
         }
-    }
+
+    })
+
+    input.addEventListener('keyup', (e) => {
+
+        if (e.key !== 'Backspace' && input.value.length === 3) {
+            input.value = input.value.replace('+7', '+7(');
+        }
+
+        if (e.key !== 'Backspace' && input.value.length === 6) {
+            input.value += ')';
+        }
+
+        if (e.key !== 'Backspace' && (
+            input.value.length === 7 ||
+            input.value.length === 11 ||
+            input.value.length === 14
+        )) {
+            input.value += '-';
+        }
+    })
 })
 
-mod.addEventListener('hidden.bs.modal', event => {
-    mod.querySelector('.invalid').classList.add('hidden');
-})
+
+
+
+
+
+
+
+
+

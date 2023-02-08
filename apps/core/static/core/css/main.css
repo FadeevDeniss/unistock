@@ -15,7 +15,7 @@
     background-size: cover;
 }
 
-:root {--main-color: #f0b30f;}
+:root {--main-color: rgba(240, 179, 15, 0.96);}
 .theme-text {color: var(--main-color);}
 
 .select {
@@ -55,6 +55,11 @@
     padding: 1em;
 }
 
+.icon-modal {
+    display: flex;
+    justify-content: center;
+}
+
 .modal-content {
     width: 80%;
     margin: 0 auto;
@@ -67,6 +72,8 @@
 .modalHeader {
     font-size: 2.3em;
     font-weight: bold;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-bottom: 25px;
 }
 
 .authForm {
@@ -75,23 +82,21 @@
     color: #fff;
 }
 
-/* || Form invalid */
-
-.invalid {
-    color: #e90505;
+.phone__label {
+    color: black;
 }
 
-.hidden {
-    display: none;
+
+/* || Effects */
+
+.form-control:focus {
+        border-color: var(--main-color);
+        box-shadow: 0px 1px 1px rgba(244, 161, 20, 0.89) inset, 0px 0px 6px var(--main-color);
 }
 
-/* Effects || Navbar */
-
-/*.navbar ul li a:hover {*/
-/*    color: var(--main-color) !important;*/
-/*    border-bottom: 1px solid var(--main-color);*/
-/*}*/
-
+.form-check-input:checked~ .form-check-label::before {
+    background: black !important;
+}
 
 /* || Media queries */
 
