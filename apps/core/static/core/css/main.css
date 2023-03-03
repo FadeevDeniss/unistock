@@ -29,6 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fade-down 0.5s;
 }
 
 .middle h1 {
@@ -58,6 +59,7 @@
 .icon-modal {
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 
 .modal-content {
@@ -82,28 +84,51 @@
     color: #fff;
 }
 
-.phone__label {
+.input-group {
+    position: relative;
+}
+
+.phone_label {
     color: black;
 }
 
+.phone_reset {
+    position: absolute;
+    color: black;
+    border: none;
+    top: 0;
+    right: 0.5rem;
+    bottom: 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+.hidden {
+    display: none;
+}
 
 /* || Effects */
 
 .form-control:focus {
-        border-color: var(--main-color);
-        box-shadow: 0px 1px 1px rgba(244, 161, 20, 0.89) inset, 0px 0px 6px var(--main-color);
+    border-color: var(--main-color);
+    box-shadow: 0px 1px 1px white inset, 0px 0px 6px var(--main-color);
 }
 
 .form-check-input:checked~ .form-check-label::before {
     background: black !important;
 }
 
+.phone_reset:hover {color: red;}
+.phone_reset:active {opacity: .6;}
+
+
+
 /* || Media queries */
 
 @media (min-width: 320px) and (max-width: 575px) {
 
     .middle {
-        height: 45vh;
+        height: 60vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -111,7 +136,7 @@
 }
 
     .middle h1 {
-        font-size: 22px;
+        font-size: 35px;
     }
 
     .modalHeader {
@@ -120,7 +145,7 @@
     }
 
     button[name="primary"] {
-        font-size: 15px;
+        font-size: 16px;
     }
 
 }
@@ -128,7 +153,7 @@
 @media (min-width: 414px) and (max-width: 575px) {
 
     .middle {
-        height: 45vh;
+        height: 60vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -136,7 +161,7 @@
 }
 
     .middle h1 {
-        font-size: 30px;
+        font-size: 40px;
     }
 
     .modalHeader {
@@ -145,14 +170,37 @@
     }
 
     button[name="primary"] {
-        font-size: 20px;
+        font-size: 16px;
     }
 
+}
+
+@media (min-width: 575px) and (max-width: 768px){
+    .middle {
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+    .middle h1 {
+        font-size: 45px;
+    }
+
+    .modalHeader {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    button[name="primary"] {
+        font-size: 16px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px){
     .middle {
-        height: 45vh;
+        height: 60vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -160,7 +208,7 @@
 }
 
     .middle h1 {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     .modalHeader {
@@ -169,7 +217,7 @@
     }
 
     button[name="primary"] {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
@@ -177,7 +225,7 @@
 @media (min-width: 992px) and (max-width: 1080px) {
 
    .middle {
-        height: 45vh;
+        height: 60vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -185,7 +233,7 @@
 }
 
     .middle h1 {
-        font-size: 30px;
+        font-size: 50px;
     }
 
     .modalHeader {
@@ -197,4 +245,16 @@
         font-size: 20px;
     }
 
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateX(-30rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
